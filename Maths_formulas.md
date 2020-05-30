@@ -65,10 +65,10 @@ $$propr.$$ **Determinante**
 6. Lo scambio di righe scambia il segno del determinante
 
 $$Def.$$ **Spettro di una matrice**
-&nbsp;&nbsp;$$\sigma(\lambda) = \{\lambda \in \mathbb{C} \hspace{0.4cm}| p(\lambda)=0\}$$
+&nbsp;&nbsp;$$\sigma(A)  \hspace{0.5cm}\overset{def}\Leftrightarrow \hspace{0.5cm} \{\lambda \in \mathbb{C} \hspace{0.4cm}| p(\lambda)=0\}$$
 
 $$Def.$$ **Raggio di una matrice**
-&nbsp;&nbsp;$$\max_{\lambda_{i}\in \mathbb{\sigma(\lambda)}} |\lambda_i|$$
+&nbsp;&nbsp;$$\rho(A) \hspace{0.5cm} \overset{def}\Leftrightarrow \hspace{0.5cm} \max_{\lambda_{i}\in \mathbb{\sigma(\lambda)}} |\lambda_i|$$
 
 $$propr.$$ **Autovalori/Autovettori**
 &nbsp;&nbsp;
@@ -79,6 +79,84 @@ $$propr.$$ **Autovalori/Autovettori**
  5. A non singolare $$\Rightarrow$$ $$\nexists \lambda = 0 \hspace{0.3cm} 0 \notin \sigma(A)$$ cioè se A è non singolare, il determinante è diverso da $$0$$ e quindi anche il $$det(A - \lambda I)$$ è diverso da $$0$$
 6. Se la matrice A è simmetrice, allora lo spettro è un sottoinsieme di $$\mathbb R$$ che possiamo ordinare in modo crescente
 7. Se $$(\lambda,x)$$ è autocoppia di $$A\in\mathbb R^{n\times n}$$ allora $$(\dfrac 1 \lambda, x)$$ autocoppia di $$A^{-1}$$
+8. $$A\in\mathbb{R}^{n\times n}  \hspace{0.5cm} \mu \notin \sigma(A)  \hspace{0.5cm} (\lambda, x) autocoppia  \hspace{0.1cm}di \hspace{0.1cm} A \hspace{0.5cm}$$ &nbsp;&nbsp;$$\Rightarrow x  \hspace{0.1cm}autovettore \hspace{0.1cm} di  \hspace{0.1cm}(A-\mu I) \hspace{0.2cm}associato  \hspace{0.1cm}a \hspace{0.2cm} (\lambda -\mu)$$
+
+
+$$Def.$$ **Matrice Ortogonale**
+&nbsp;&nbsp; $$Q \in \mathbb{R}^{n\times n} è  \hspace{0.1cm}ortogonale \hspace{0.5cm} \overset{def}\Leftrightarrow  \hspace{0.5cm} Q^TQ=I_n=QQ^T$$
+**Nota**: Le matrici ortogonali sono matrici le cui colonne sono perpendicolari fra di loro
+
+$$Def.$$ **Autovettore sinistro**
+&nbsp;&nbsp;Si dice che $$y$$ è autovettore sinistro se  $$A \in \mathbb{R}^{n\times n}$$ $$y$$ è un vettore riga $$\neq 0$$ &nbsp;t.c.&nbsp;   $$yA = \mu y$$
+
+$$Def.$$ **Quoziente di Rayleigh**
+$$\hspace{5cm}$$ $$\lambda= \dfrac{x^TAx}{x^Tx}$$
+
+$$propr.$$ **Prodotto Scalare**
+&nbsp;&nbsp; Sia $$V(+,*)$$ uno spazio vettoriale
+1. $$\forall x \in V$$ $$\hspace{0.5cm}(x,x) \geq 0$$
+2. $$\forall \alpha \in \mathbb{R} \hspace{0.6cm}$$ $$\forall x, y \in V \hspace{0.5cm} (x, \alpha x) = \alpha(x,y)$$
+3. $$\forall x,y \in V \hspace{0.2cm}$$ $$(x,y) = (y,x)$$
+4. $$\forall x, y, z \in V \hspace{0.2cm} (x, y+z) = (x,y)+(y,z)$$
+
+$$Def.$$ **Norma indotta**
+$$\forall x \in V  \hspace{0.5cm} \parallel x \parallel_{indotta} = \sqrt{(x,x)}= \hspace{0cm}\parallel x \parallel_{2}$$
+
+$$Def.$$ **Ortogonalità**
+&nbsp;&nbsp; $$u\perp v \overset{def}\Leftrightarrow \parallel u\parallel_2^2 + \parallel v \parallel_2^2 \hspace{0cm} =  \hspace{0cm}\parallel u - v \parallel_2^2$$
+
+$$Def.$$ **Legge del Coseno**
+$$\hspace{4cm}cos \theta_xy=$$$$\hspace{0.3cm}$$$$\dfrac{u^Tv}{||u||_2 \hspace{0.2cm}||v||_2}$$
+
+$$Def.$$ **Similarità fra due matrici**
+&nbsp;&nbsp; $$A, B \in \mathbb{R}^{n\times n}$$ sono simili se  $$\exists P \in \mathbb{R}^{n\times n}$$ **non singolare** t.c. $$B=P^{-1}AP$$
+
+&nbsp;&nbsp;$$\hspace{0.5cm}propr.$$ **Similarità fra matrici**
+1. Se A e B sono matrici simili, allora avranno stessi *autovalori*
+2. Se A e B sono matrici simili, allora se $$x$$ è *autovettore* di B, $$Px$$ sarà autovettore di A
+
+$$Def.$$ **Matrice Diagonalizzabile**
+&nbsp;&nbsp; $$A \in \mathbb{R}^{n\times n}$$ è diagonalizzabile se possiede $$n$$ autovettori **lin-ind** t.c. $$\exists S \in \mathbb{R}^{n\times n}$$ non singolare contenente gli autovettori della matrice $$A$$ per cui:
+$$\hspace{5cm} A= S^{-1}\Lambda S$$ 
+doe: $$\Lambda$$ è la matrice *diagonale* contenente gli *autovalori* di A$$
+
+$$Teorema$$ **Di Schur**
+&nbsp;&nbsp; $$\forall a \in \mathbb{R}^{n\times n}$$ è simile mediante una trasformazione **ortogonale** ad una matrice *triangolare superiore* con elementi diagonali che sono gli *autovalori* di A, cioe $$t_{ii} \in \sigma (A)$$.
+In altri termini:
+&nbsp;&nbsp;$$\exists T \in \mathbb{R}^{n \times n} \hspace{0.1cm}triang. sup.$$ t.c $$\hspace{0cm}$$ $$\hspace{0.5cm}t_{ii} \in \sigma(A)$$
+&nbsp;&nbsp;$$\exists Q \in \mathbb{R}^{n \times n} \hspace{0.1cm} ortonormale$$ t.c.$$\hspace{0.29cm} Q^{-1}=Q^T$$ le colonne di Q sono autovettori di A
+$$\hspace{4cm} QAQ^T=T$$ ovvero $$A = Q^TTQ$$
+
+**Proposizione**
+&nbsp;&nbsp;Se $$A \in \mathbb{R}^{n\times n}$$, le seguenti proposizioni sono equivalenti:
+1. A è non singolare
+2. $$rank(A) = n$$
+3. $$Range(A) = \mathbb{n}$$
+4. $$Null(A) = \{0\}$$
+5. le colonne di A sono **lin-ind**
+
+**Proposizione**
+&nbsp;&nbsp;Se $$A \in \mathbb{R}^{m\times n}$$  con $$k = rank(A)$$, le seguenti proposizioni sono equivalenti:
+1. $$Range(A)$$ è lo spazio generato dalle colonne di base di A
+2. $$dim(Range(A))=k$$
+3. le k colonne di base ottenute tramite la trasformazione di A nella forma di **Echelon** sono vettori **lin-ind**
+4. $$\exists$$ una sottomatrice di A quadrata di dimensione $$k \times k$$
+5. Lo spazio nullo di A è un **sottoinsieme** di $$\mathbb{R}^m$$
+6. $$dim(Null(A)) = n - k$$ [che corrispondono alle variabili libere (gradi di libertà)]
+7.  $$dim(Null(A^T)) = n - k$$ $$\hspace{0.6cm}Null(A^T)$$ sottoinsieme di $$\mathbb{R}^n$$
+8.  $$rank(A)\leq min(m,n)$$
+
+$$Def.$$ **Spazio Range, Spazio Null**
+&nbsp;&nbsp; $$Range(A) = \{y \in \mathbb{R^m} | \exists x \in \mathbb{R^n} \hspace{0.2cm}t.c.\hspace{0.2cm} Ax = y\}$$
+&nbsp;&nbsp; $$Range(A^T) = \{y \in \mathbb{R^n} | \exists x \in \mathbb{R^m} \hspace{0.2cm}t.c.\hspace{0.2cm} A^Tx = y\}$$
+&nbsp;&nbsp; $$Null(A) = \{x \in \mathbb{R^n} \hspace{0.2cm}t.c.\hspace{0.2cm} Ax = 0\}$$
+&nbsp;&nbsp; $$Null(A) = \{x \in \mathbb{R^m} \hspace{0.2cm}t.c.\hspace{0.2cm} A^Tx = 0\}$$
+
+
+
+
+
+
 
 
 
